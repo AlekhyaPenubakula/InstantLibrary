@@ -9,7 +9,7 @@ from bcrypt import hashpw, gensalt, checkpw
 app = Flask(__name__)
 
 # Initialize DynamoDB resource
-dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')  # Replace with your AWS region
+dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')  # Update to your AWS region
 sns = boto3.client('sns', region_name='ap-south-1')
 
 # DynamoDB Tables
@@ -20,10 +20,11 @@ requests_table = dynamodb.Table('Requests')  # Ensure the 'Requests' table is cr
 sns_topic_arn = 'arn:aws:sns:ap-south-1:557690616836:BookRequestNotifications'
 
 # Email settings (for sending emails)
-SMTP_SERVER = "smtp.gmail.com"  # Update with your email provider's SMTP server
+SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SENDER_EMAIL = "instantlibrary2@gmail.com"  # Your email address
-SENDER_PASSWORD = "knrs asbj pmlj rgbu"  # Your email password
+SENDER_EMAIL = "instantlibrary2@gmail.com"
+SENDER_PASSWORD = "luut dsih nyvq dgzv"  # Your app password
+
 
 
 # Function to send email
@@ -50,6 +51,7 @@ def send_email(to_email, subject, body):
 @app.route('/')
 def home():
     return redirect(url_for('register'))
+
 
 # Registration Page
 @app.route('/register', methods=['GET', 'POST'])
@@ -94,6 +96,7 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html')
 
+
 # Login Page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -123,10 +126,12 @@ def login():
         return redirect(url_for('home_page'))
     return render_template('login.html')
 
+
 # Home Page with E-Books, Request Books, and Exit
 @app.route('/home-page')
 def home_page():
     return render_template('home.html')
+
 
 # E-Books Page (Dropdown Selection for Course and Subject)
 @app.route('/ebook-buttons', methods=['GET', 'POST'])
@@ -136,10 +141,12 @@ def ebook_buttons():
         return redirect(url_for('subject_page', subject=subject))
     return render_template('ebook-buttons.html')
 
+
 # Subject Page (Example with Mathematics)
 @app.route('/<subject>.html')
 def subject_page(subject):
     return render_template(f'{subject}.html')
+
 
 # Book Request Form Page
 @app.route('/request-form', methods=['GET', 'POST'])
@@ -175,17 +182,19 @@ def request_form():
 
         # Send an email to the Instant Library admin with the book request details
         admin_message = f"User {name} ({email}) has requested the book '{book_name}'.\n\nDetails:\nYear: {year}\nSemester: {semester}\nSubject: {subject}\nDescription: {description}"
-        send_email("instantlibrary@gmail.com", "New Book Request", admin_message)
+        send_email("instantlibrary2@gmail.com", "New Book Request", admin_message)
 
         return "<h3>Book request submitted successfully! We will get back to you soon.</h3>"
 
     # Render the request form for GET requests
     return render_template('request-form.html')
 
+
 # Exit Page
 @app.route('/exit')
 def exit_page():
     return render_template('exit.html')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
