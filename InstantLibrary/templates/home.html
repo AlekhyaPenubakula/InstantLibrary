@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Library - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('static/images/open-book-45.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Header Styling */
+        .header {
+            background-color:rgba(85, 83, 83, 0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header button {
+            margin: 10px;
+            padding: 0px 60px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .header button:hover {
+            background-color: #7a7f85;
+        }
+
+        .content {
+            margin-top: 120px; /* To prevent overlap with fixed header */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 300px; /* Reduced padding for better visibility */
+            margin: 40px 20px; /* Increase spacing between sections */
+            background: transparent;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            display: flex; /* Flexbox for centering */
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
+            text-align: center; /* Center text inside the section */
+            width: 100%;
+        }
+
+        h2 {
+            color: #f40f0f;
+            text-align: center;
+            font-size: 42px;
+        }
+
+        p {
+            text-align: center; /* Center-align paragraphs */
+            color: black;
+            font-size: 22px;
+            margin: 0 auto;
+            max-width: 900px; /* Constrain the width for better readability */
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: rgba(85, 83, 83, 0.7); /* Adjusted background color */
+            color: white; /* Ensured text color is white */
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Vertically center the content */
+            justify-content: center; /* Horizontally center the content */
+            text-align: center; /* Center text */
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <button onclick="window.location.href='home.html#home-section'">Home</button>
+        <button onclick="window.location.href='home.html#about-section'">About Us</button>
+        <button onclick="window.location.href='home.html#contact-section'">Contact</button>
+        <button onclick="window.location.href='ebook-buttons'">E-Books</button>
+        <button onclick="window.location.href='request-form'">Request Books</button>
+        <button onclick="window.location.href='exit'">Exit</button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <!-- Home Section -->
+        <div id="home-section" class="section home-section">
+            <div>
+                <h2>Welcome to Instant Library</h2>
+                <p>
+                    Instant Library is a comprehensive digital library solution that allows users to access a wide variety of educational resources.
+                    Whether you are a student or an educator, our platform offers a rich collection of e-books across multiple subjects to support your learning and teaching needs.
+                    Explore our extensive catalog and find the right resources to enhance your knowledge and academic journey.
+                </p>
+            </div>
+        </div>
+
+        <!-- About Us Section -->
+        <div id="about-section" class="section about-section">
+            <div>
+                <h2>About Us</h2>
+                <p>
+                    The Instant Library was established to bridge the gap between learners and educational resources.
+                    Our mission is to make learning accessible to everyone by providing high-quality books and digital content that cater to diverse educational needs.
+                    We are dedicated to empowering students and educators by giving them access to valuable knowledge at their fingertips.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact-section" class="section contact-section">
+            <div>
+                <h2>Contact Us</h2>
+                <p>
+                    We would love to hear from you! Feel free to reach out to us if you have any questions, feedback, or suggestions.
+                </p>
+                <p>
+                    <strong>Email:</strong> support@instantlibrary.com<br>
+                    <strong>Address:</strong> 123 Library Lane, Knowledge City, Booksville<br>
+                    <strong>Phone:</strong> +1 (123) 456-7890
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p class="footer-description">
+            &copy; 2024 Instant Library. All Rights Reserved.
+        </p>
+    </div>
+</body>
+</html>

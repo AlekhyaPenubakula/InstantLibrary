@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Library - E-Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('static/images/stack-of-books.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Header Styling (Same as home.html) */
+        .header {
+            background-color: rgba(46, 40, 40, 0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header button {
+            margin: 10px;
+            padding: 0px 60px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .header button:hover {
+            background-color: #7a7f85;
+        }
+
+        .content {
+            margin-top: 120px; /* To prevent overlap with fixed header */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 200px); /* Adjusted height */
+        }
+
+        .dropdown-container {
+            text-align: center;
+            background: transparent;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        label, select, button {
+            font-size: 22px;
+            margin: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 300px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #129910;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #199f4a;
+        }
+
+        /* Footer Styling (Same as home.html) */
+        .footer {
+            background-color: rgba(85, 83, 83, 0.7); /* Adjusted background color */
+            color: white; /* Ensured text color is white */
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Vertically center the content */
+            justify-content: center; /* Horizontally center the content */
+            text-align: center; /* Center text */
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function navigateToPage() {
+            const selectedSubject = document.getElementById("subject").value;
+            if (selectedSubject === "Mathematics") {
+                window.location.href = "mathematics.html";
+            } else if (selectedSubject === "Statistics") {
+                window.location.href = "statistics.html";
+            } else if (selectedSubject === "Computer Science") {
+                window.location.href = "computer_science.html";
+            } else if (selectedSubject === "Data Science") {
+                window.location.href = "data_science.html";
+            } else if (selectedSubject === "English") {
+                window.location.href = "english.html";
+            } else if (selectedSubject === "SEC Paper") {
+                window.location.href = "sec_paper.html";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Section (Same as home.html) -->
+    <div class="header">
+        <button onclick="window.location.href='home.html#home-section'">Home</button>
+        <button onclick="window.location.href='home.html#about-section'">About Us</button>
+        <button onclick="window.location.href='home.html#contact-section'">Contact</button>
+        <button onclick="window.location.href='ebook-buttons'">E-Books</button>
+        <button onclick="window.location.href='request-form'">Request Books</button>
+        <button onclick="window.location.href='exit'">Exit</button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <div class="dropdown-container">
+            <h2>Select Course and Subject</h2>
+            <form method="POST">
+                <label for="course">Select Course:</label>
+                <select name="course" id="course" required>
+                    <option value="BSc">BSc</option>
+                </select><br>
+
+                <label for="subject">Select Subject:</label>
+                <select name="subject" id="subject" required>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Statistics">Statistics</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="English">English</option>
+                </select><br>
+
+                <button type="button" onclick="navigateToPage()">Enter</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section (Same as home.html) -->
+    <div class="footer">
+        &copy; 2024 Instant Library. All Rights Reserved.
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Books - Instant Library</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        /* Specific Styling for Request Form Page */
+        .request-form-container {
+            width: 60%;
+            background: transparent;
+            padding: 30px;
+            margin: 150px auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 22px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: auto;
+            padding: 12px 30px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <button onclick="window.location.href='home.html'">Home</button>
+        <button onclick="window.location.href='ebook-buttons.html'">E-Books</button>
+        <button onclick="window.location.href='request-form.html'">Request Books</button>
+        <button onclick="window.location.href='exit.html'">Exit</button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="request-form-container">
+        <h2>Request a Book</h2>
+        <form method="POST" action="/request-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>  <!-- Added Email Field -->
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="year">Year:</label>
+            <select id="year" name="year" required>
+                <option value="">Select Year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+            </select>
+
+            <label for="semester">Semester:</label>
+            <select id="semester" name="semester" required>
+                <option value="">Select Semester</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+
+            <label for="roll-no">Roll No.:</label>
+            <input type="text" id="roll-no" name="roll-no" required>
+
+            <label for="subject">Subject:</label>
+            <select id="subject" name="subject" required>
+                <option value="">Select Subject</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Statistics">Statistics</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Data Science">Data Science</option>
+                <option value="English">English</option>
+                <option value="SEC Paper">SEC Paper</option>
+            </select>
+
+            <label for="book-name">Book Name:</label>
+            <input type="text" id="book-name" name="book-name" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <input type="submit" value="Submit Request">
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        &copy; 2024 Instant Library. All Rights Reserved.
+    </div>
+</body>
+</html>
