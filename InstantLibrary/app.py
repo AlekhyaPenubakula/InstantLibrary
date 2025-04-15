@@ -24,7 +24,7 @@ sns_topic_arn = 'arn:aws:sns:ap-south-1:557690616836:BookRequestNotifications'
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SENDER_EMAIL = "instantlibrary2@gmail.com"
-SENDER_PASSWORD = "luut dsih nyvq dgzv"  # Your app password
+SENDER_PASSWORD = "bfky mazi emzy wtsr"  # Your app password
 
 
 
